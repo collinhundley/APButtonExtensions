@@ -135,7 +135,7 @@ public extension UIControl {
     /// Cleans the registry, removing any actions whose object has already been released.
     /// This guarantees that no memory leaks will occur over time.
     private static func cleanRegistry() {
-        UIControl.actionRegistry = UIControl.actionRegistry.filter({ $0.object != nil })
+        UIControl.actionRegistry = UIControl.actionRegistry.filter { $0.object != nil }
     }
     
     
