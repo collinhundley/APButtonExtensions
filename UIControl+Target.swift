@@ -121,7 +121,7 @@ public extension UIControl {
     /// Triggers the actions for the correct control events.
     private func triggerAction(forObject: UIControl, event: UIControlEvents) {
         for action in UIControl.actionRegistry {
-            if action.object == forObject && action.event == event {
+            if action.object === forObject && action.event == event {
                 if let function = action.function as? () -> Void {
                     function()
                 } else if let function = action.function as? (sender: UIControl) -> Void {
