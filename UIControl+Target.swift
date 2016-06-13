@@ -121,7 +121,7 @@ public extension UIControl {
     /// Triggers the actions for the correct control events.
     private func triggerAction(forObject: UIControl, event: UIControlEvents) {
         for action in UIControl.actionRegistry {
-            if action.object == forObject && action.event == event {
+            if action.object === forObject && action.event == event {
                 if let function = action.function as? () -> Void {
                     function()
                 } else if let function = action.function as? (sender: UIControl) -> Void {
@@ -135,7 +135,7 @@ public extension UIControl {
     /// Cleans the registry, removing any actions whose object has already been released.
     /// This guarantees that no memory leaks will occur over time.
     private static func cleanRegistry() {
-        UIControl.actionRegistry = UIControl.actionRegistry.filter({ $0.object != nil })
+        UIControl.actionRegistry = UIControl.actionRegistry.filter { $0.object != nil }
     }
     
     

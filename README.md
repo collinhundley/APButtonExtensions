@@ -56,7 +56,7 @@ Referencing `self` (the view controller), or *any property or method of `self`*,
 Luckily, this is very easy to avoid. If you need to access a `UIControl's` parent within the the target, you can simply make the parent `unowned`:
 
 ```
-myButton.addTarget(.TouchUpInside) {[unowned self]() in
+myButton.addTarget(.TouchUpInside) {[unowned self] in
     print("This gets called when I tap the button!")
     self.counter += 1
 }
